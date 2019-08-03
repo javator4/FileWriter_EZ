@@ -1,7 +1,9 @@
 package pl.sda.filewriter;
 
 
-public class App 
+import java.util.TreeMap;
+
+public class App
 {
     static class Task1 implements Runnable{ //wewnętrzna klasa
 
@@ -29,5 +31,11 @@ public class App
 
         Task1 task1 = new Task1();
         Task2 task2 = new Task2();
+
+        Thread thread1 = new Thread(task1);
+        Thread thread2 = new Thread(task2);
+
+        thread1.start(); // uruchomienie wątku thread1
+        thread2.start();
     }
 }
