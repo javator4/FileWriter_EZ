@@ -9,9 +9,8 @@ public class FileWriterSingleton {
 
     private static FileWriterSingleton instance;
 
-    private FileWriterSingleton(){ // prywatny konstruktor zapewnia 1 instancję klasy
+    private FileWriterSingleton(){}// prywatny konstruktor zapewnia 1 instancję klasy
 
-    }
 
     public synchronized static FileWriterSingleton getInstance(){ // słowo synchronized!!!!
         if(instance == null){
@@ -25,10 +24,5 @@ public class FileWriterSingleton {
         FileWriter writer = new FileWriter(new File(file), true);
         writer.write(text);
         writer.close();
-
-
-
     }
-
-
 }

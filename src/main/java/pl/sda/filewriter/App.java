@@ -11,10 +11,12 @@ public class App {
         @Override
         public void run() {
 
-            FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+            //FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+
+            SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
             System.out.println(fileWriterSingleton);
             try {
-                fileWriterSingleton.write("hello", "data.txt");
+                fileWriterSingleton.write(" hello\n ", "data.txt");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -26,10 +28,12 @@ public class App {
 
             @Override
             public void run() {
-                FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+                // FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
+
+                SingletonEnum fileWriterSingleton = SingletonEnum.INSTANCE;
                 System.out.println(fileWriterSingleton);
                 try {
-                    fileWriterSingleton.write("witaj", "data.txt");
+                    fileWriterSingleton.write(" witaj ", "data.txt");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
