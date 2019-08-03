@@ -8,7 +8,7 @@ public class FileWriterSingleton {
 
     }
 
-    public static FileWriterSingleton getInstance(){
+    public synchronized static FileWriterSingleton getInstance(){
         if(instance == null){
             System.out.println("jestem w if");
 
