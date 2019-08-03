@@ -1,9 +1,11 @@
 package pl.sda.filewriter;
 
 
+import java.io.IOException;
 import java.util.TreeMap;
 
 public class App {
+
     static class Task1 implements Runnable { //wewnętrzna klasa
 
         @Override
@@ -11,6 +13,12 @@ public class App {
 
             FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
             System.out.println(fileWriterSingleton);
+            try {
+                fileWriterSingleton.write("hello", "data.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -20,6 +28,11 @@ public class App {
             public void run() {
                 FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
                 System.out.println(fileWriterSingleton);
+                try {
+                    fileWriterSingleton.write("witaj", "data.txt");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -54,7 +67,7 @@ public class App {
             Thread thread3 = new Thread(task3);
             Thread thread4 = new Thread(task4);
 
-          thread1.start(); // uruchomienie wątku thread1
+            thread1.start(); // uruchomienie wątku thread1
             thread2.start();
             thread3.start();
             thread4.start();
@@ -62,6 +75,8 @@ public class App {
          //   FileWriterSingleton fileWriterSingleton = FileWriterSingleton.getInstance();
            // FileWriterSingleton fileWriterSingleton2 = FileWriterSingleton.getInstance();
             //FileWriterSingleton fileWriterSingleton3 = FileWriterSingleton.getInstance();
+
+
 
         }
     }
