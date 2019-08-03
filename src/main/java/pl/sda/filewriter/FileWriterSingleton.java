@@ -10,6 +10,8 @@ public class FileWriterSingleton {
 
     public static FileWriterSingleton getInstance(){
         if(instance == null){
+            System.out.println("jestem w if");
+
             instance = new FileWriterSingleton();
         }
         return instance;
